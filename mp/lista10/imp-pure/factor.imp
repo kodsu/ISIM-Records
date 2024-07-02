@@ -1,0 +1,23 @@
+var n 
+var val 
+var it 
+begin 
+    read n  
+    if n = 1 then 
+    write 1 
+    else skip
+    it := 2 
+    val := n 
+    while (it * it) <= n do 
+    begin 
+        while (val / it) * it = val do 
+        begin 
+            write it 
+            val := (val / it) 
+        end 
+        it := it + 1 
+    end 
+    if val > 1 then  
+    write val 
+    else skip 
+end

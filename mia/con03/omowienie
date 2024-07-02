@@ -1,0 +1,8 @@
+
+
+// dp[d, i] <- ile jest ciagow dobrych dlugosci d konczacych sie na pozycji i 
+
+gdy d%1 = k dp[d, i] = : suma (po j < i) dp[d-1, i] // to mozemy zopcic suma prefiksowa 
+wpp  = : suma(po j < i ) gdzie j ma taki sam kolor jak i 
+	dp[d-1, j] 
+	na tych samych kolorkach tez jakos robimy sumy prefiksowe 

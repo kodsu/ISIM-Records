@@ -1,0 +1,42 @@
+plan rzeczy do zrobienia:   
+    zrobic generowanie drzewa z opisu 
+        struct node* build_tree_from_desc(char * desc); // przyklad desc: "0:a:100:b:101:c:110:d:111:e:" 
+        przy czym nalezy sprawdzic czy takie drzewo ma sens(kazdy node ma 2 lub 0 childow) 
+        jesli napis nie jest poprawnie sformatowany lub powstale drzewo jest glupie(brakuje ':' lub nastepuje nieodpowiedni ciag wartosci (brak naprzemiennosci znak - kod binarny) to powiedz NULL) 
+        potem sprawdzasz czy kazdy node ma 2 lub 0 dzieci, jak nie to tez zwracasz NULL, lub gdy node powienien byc jednoczesnie lisciem i rozgaleznikiem 
+    zrobic rozkodowanie argumenty: kod, bufor bajtów
+        dostajemy bufor bajtów i mamy ją rozkodować
+        zapamiętując przy okazji gdzie skończyliśmy czytać
+
+
+Według chat gpt: 
+Oczywiście, rozumiem. Na podstawie treści, możemy zidentyfikować kilka funkcji, które powinny zostać zaimplementowane. Poniżej opisuję, co każda z tych funkcji powinna robić:
+
+    Funkcja do odczytu kodu Huffmana:
+        Wejście: Napis zawierający kod Huffmana w ustalonym formacie.
+        Wyjście: Struktura danych (np. drzewo Huffmana), reprezentująca odczytany kod.
+        Zadanie: Odczytanie kodu Huffmana z napisu, sprawdzenie poprawności składniowej i struktury drzewa, oraz utworzenie struktury danych do przechowywania tego kodu.
+
+    Funkcja dekodująca:
+        Wejście: Struktura drzewa Huffmana i zakodowany napis.
+        Wyjście: Rozkodowany napis.
+        Zadanie: Zdekodowanie zakodowanego napisu przy użyciu drzewa Huffmana.
+
+    Funkcja do zwalniania pamięci drzewa Huffmana:
+        Wejście: Struktura drzewa Huffmana.
+        Wyjście: Brak (procedura wykonuje się w miejscu).
+        Zadanie: Zwolnienie pamięci zajmowanej przez strukturę drzewa Huffmana po zakończeniu programu lub gdy struktura nie jest już potrzebna.
+
+    Funkcja obsługująca błędy:
+        Wejście: Kod błędu lub informacja o błędzie.
+        Wyjście: Brak (procedura wykonuje się w miejscu).
+        Zadanie: Odpowiednie obsłużenie błędów, takich jak nieprawidłowy format napisu kodu Huffmana lub problem związany z drzewem kodowym. Może zawierać wypisywanie komunikatów o błędach.
+
+Dodatkowo, musisz zaimplementować procedurę łączącą te funkcje w program. Oto ogólny opis, jak to połączyć:
+
+    Główny program:
+        Wejście: Odpowiednie dane wejściowe, takie jak kod Huffmana w postaci napisu.
+        Wyjście: Odpowiednie dane wyjściowe, na przykład zdekodowany napis lub komunikaty o błędach.
+        Zadanie: Korzystając z wcześniej zaimplementowanych funkcji, odczytaj kod Huffmana, przeprowadź dekodowanie i obsłuż ewentualne błędy. Następnie wypisz wyniki lub komunikaty o błędach.
+
+Warto zauważyć, że implementacja może wymagać dodatkowych detali zależnych od szczegółów formatu kodu Huffmana i konkretnych wymagań zadania.

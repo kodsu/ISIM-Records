@@ -1,0 +1,21 @@
+# dune utop src
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Shared cache location: /home/jakub/.cache/dune/db
+# Workspace root: /home/jakub/Desktop/sem2/mp/lista07/let
+# Auto-detected concurrency: 6
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /home/jakub/.opam/4.14.0/bin/ocamlc.opt -config > /tmp/dune_3ee989_output
+$ (cd _build/default && /home/jakub/.opam/4.14.0/bin/ocamldep.opt -modules -impl src/main.ml) > _build/default/src/.let.objs/let__Main.impl.d
+$ (cd _build/default && /home/jakub/.opam/4.14.0/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I src/.let.objs/byte -no-alias-deps -opaque -open Let -o src/.let.objs/byte/let__Main.cmo -c -impl src/main.ml)
+$ (cd _build/default && /home/jakub/.opam/4.14.0/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o src/let.cma src/.let.objs/byte/let.cmo src/.let.objs/byte/let__Ast.cmo src/.let.objs/byte/let__Parser.cmo src/.let.objs/byte/let__Lexer.cmo src/.let.objs/byte/let__Main.cmo)
+$ (cd _build/default && /home/jakub/.opam/4.14.0/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -bin-annot -I src/.utop/.utop.eobjs/byte -I /home/jakub/.opam/4.14.0/lib/bytes -I /home/jakub/.opam/4.14.0/lib/findlib -I /home/jakub/.opam/4.14.0/lib/lambda-term -I /home/jakub/.opam/4.14.0/lib/logs -I /home/jakub/.opam/4.14.0/lib/lwt -I /home/jakub/.opam/4.14.0/lib/lwt/unix -I /home/jakub/.opam/4.14.0/lib/lwt_react -I /home/jakub/.opam/4.14.0/lib/mew -I /home/jakub/.opam/4.14.0/lib/mew_vi -I /home/jakub/.opam/4.14.0/lib/ocaml/compiler-libs -I /home/jakub/.opam/4.14.0/lib/ocaml/threads -I /home/jakub/.opam/4.14.0/lib/ocplib-endian -I /home/jakub/.opam/4.14.0/lib/ocplib-endian/bigstring -I /home/jakub/.opam/4.14.0/lib/react -I /home/jakub/.opam/4.14.0/lib/result -I /home/jakub/.opam/4.14.0/lib/trie -I /home/jakub/.opam/4.14.0/lib/uchar -I /home/jakub/.opam/4.14.0/lib/utop -I /home/jakub/.opam/4.14.0/lib/uucp -I /home/jakub/.opam/4.14.0/lib/uuseg -I /home/jakub/.opam/4.14.0/lib/uutf -I /home/jakub/.opam/4.14.0/lib/xdg -I /home/jakub/.opam/4.14.0/lib/zed -I src/.let.objs/byte -no-alias-deps -o src/.utop/.utop.eobjs/byte/dune__exe__Utop.cmo -c -impl src/.utop/utop.ml-gen)
+$ (cd _build/default && /home/jakub/.opam/4.14.0/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -o src/.utop/utop.bc /home/jakub/.opam/4.14.0/lib/ocaml/compiler-libs/ocamlcommon.cma /home/jakub/.opam/4.14.0/lib/ocaml/compiler-libs/ocamlbytecomp.cma /home/jakub/.opam/4.14.0/lib/ocaml/compiler-libs/ocamltoplevel.cma /home/jakub/.opam/4.14.0/lib/findlib/findlib.cma /home/jakub/.opam/4.14.0/lib/findlib/findlib_top.cma /home/jakub/.opam/4.14.0/lib/logs/logs.cma /home/jakub/.opam/4.14.0/lib/lwt/lwt.cma /home/jakub/.opam/4.14.0/lib/logs/logs_lwt.cma /home/jakub/.opam/4.14.0/lib/ocaml/unix.cma /home/jakub/.opam/4.14.0/lib/ocaml/bigarray.cma /home/jakub/.opam/4.14.0/lib/ocplib-endian/ocplib_endian.cma /home/jakub/.opam/4.14.0/lib/ocplib-endian/bigstring/ocplib_endian_bigstring.cma /home/jakub/.opam/4.14.0/lib/ocaml/threads/threads.cma /home/jakub/.opam/4.14.0/lib/lwt/unix/lwt_unix.cma -I /home/jakub/.opam/4.14.0/lib/lwt/../stublibs /home/jakub/.opam/4.14.0/lib/react/react.cma /home/jakub/.opam/4.14.0/lib/lwt_react/lwt_react.cma /home/jakub/.opam/4.14.0/lib/result/result.cma /home/jakub/.opam/4.14.0/lib/uutf/uutf.cma /home/jakub/.opam/4.14.0/lib/uucp/uucp.cma /home/jakub/.opam/4.14.0/lib/uuseg/uuseg.cma /home/jakub/.opam/4.14.0/lib/zed/zed.cma /home/jakub/.opam/4.14.0/lib/trie/trie.cma /home/jakub/.opam/4.14.0/lib/mew/mew.cma /home/jakub/.opam/4.14.0/lib/mew_vi/mew_vi.cma /home/jakub/.opam/4.14.0/lib/lambda-term/lambda_term.cma -I /home/jakub/.opam/4.14.0/lib/lambda-term/../stublibs /home/jakub/.opam/4.14.0/lib/xdg/xdg.cma -I /home/jakub/.opam/4.14.0/lib/xdg/../stublibs /home/jakub/.opam/4.14.0/lib/utop/uTop.cma src/let.cma src/.utop/.utop.eobjs/byte/dune__exe__Utop.cmo -linkall -warn-error -31)

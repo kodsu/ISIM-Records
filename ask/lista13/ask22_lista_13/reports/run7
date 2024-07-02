@@ -1,0 +1,121 @@
+./dictionary-pg -file shakespeare.txt -size 1021 -hash 2 -quick 1 \
+	-find 2 -lower 1 -verbose 1 -ngram 2
+verbose	1
+size	1021
+hash	2
+lower	1
+find	2
+ngram	2
+quicksort	1
+file	shakespeare.txt
+N-gram size 2
+Lower case function lower2
+Hash function h_xor
+Find element function find_ele_iter_r
+1892	'i am'
+965028 n-grams, 363039 unique, 266018 singletons.  Most common (1892) = 'i am'.  Longest (1 have length 32) = 'honorificabilitudinitatibus thou'
+Total time = 7.789442 seconds
+gprof -b dictionary-pg gmon.out
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 97.55      5.57     5.57   965027     0.00     0.00  find_ele_iter_r
+  0.88      5.62     0.05        1     0.05     0.05  sort_words
+  0.70      5.66     0.04   965027     0.00     0.00  insert_string
+  0.53      5.69     0.03                             compare_ele
+  0.18      5.70     0.01   965027     0.00     0.00  h_xor
+  0.18      5.71     0.01   965027     0.00     0.00  lower2
+  0.00      5.71     0.00   965029     0.00     0.00  get_word
+  0.00      5.71     0.00   965028     0.00     0.00  get_token
+  0.00      5.71     0.00   363039     0.00     0.00  new_ele
+  0.00      5.71     0.00   363039     0.00     0.00  save_string
+  0.00      5.71     0.00        8     0.00     0.00  find_option
+  0.00      5.71     0.00        7     0.00     0.00  add_int_option
+  0.00      5.71     0.00        1     0.00     0.00  add_string_option
+  0.00      5.71     0.00        1     0.00     0.00  parse_options
+  0.00      5.71     0.00        1     0.00     0.00  show_options
+  0.00      5.71     0.00        1     0.00     5.68  word_freq
+
+			Call graph
+
+
+granularity: each sample hit covers 4 byte(s) for 0.18% of 5.71 seconds
+
+index % time    self  children    called     name
+                0.00    5.68       1/1           main [2]
+[1]     99.5    0.00    5.68       1         word_freq [1]
+                0.04    5.59  965027/965027      insert_string [3]
+                0.05    0.00       1/1           sort_words [5]
+                0.00    0.00  965028/965028      get_token [10]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     99.5    0.00    5.68                 main [2]
+                0.00    5.68       1/1           word_freq [1]
+                0.00    0.00       7/7           add_int_option [14]
+                0.00    0.00       1/1           add_string_option [15]
+                0.00    0.00       1/1           show_options [17]
+                0.00    0.00       1/1           parse_options [16]
+-----------------------------------------------
+                0.04    5.59  965027/965027      word_freq [1]
+[3]     98.6    0.04    5.59  965027         insert_string [3]
+                5.57    0.00  965027/965027      find_ele_iter_r [4]
+                0.01    0.00  965027/965027      lower2 [8]
+                0.01    0.00  965027/965027      h_xor [7]
+-----------------------------------------------
+                5.57    0.00  965027/965027      insert_string [3]
+[4]     97.5    5.57    0.00  965027         find_ele_iter_r [4]
+                0.00    0.00  363039/363039      new_ele [11]
+                0.00    0.00  363039/363039      save_string [12]
+-----------------------------------------------
+                0.05    0.00       1/1           word_freq [1]
+[5]      0.9    0.05    0.00       1         sort_words [5]
+-----------------------------------------------
+                                                 <spontaneous>
+[6]      0.5    0.03    0.00                 compare_ele [6]
+-----------------------------------------------
+                0.01    0.00  965027/965027      insert_string [3]
+[7]      0.2    0.01    0.00  965027         h_xor [7]
+-----------------------------------------------
+                0.01    0.00  965027/965027      insert_string [3]
+[8]      0.2    0.01    0.00  965027         lower2 [8]
+-----------------------------------------------
+                0.00    0.00  965029/965029      get_token [10]
+[9]      0.0    0.00    0.00  965029         get_word [9]
+-----------------------------------------------
+                0.00    0.00  965028/965028      word_freq [1]
+[10]     0.0    0.00    0.00  965028         get_token [10]
+                0.00    0.00  965029/965029      get_word [9]
+-----------------------------------------------
+                0.00    0.00  363039/363039      find_ele_iter_r [4]
+[11]     0.0    0.00    0.00  363039         new_ele [11]
+-----------------------------------------------
+                0.00    0.00  363039/363039      find_ele_iter_r [4]
+[12]     0.0    0.00    0.00  363039         save_string [12]
+-----------------------------------------------
+                0.00    0.00       8/8           parse_options [16]
+[13]     0.0    0.00    0.00       8         find_option [13]
+-----------------------------------------------
+                0.00    0.00       7/7           main [2]
+[14]     0.0    0.00    0.00       7         add_int_option [14]
+-----------------------------------------------
+                0.00    0.00       1/1           main [2]
+[15]     0.0    0.00    0.00       1         add_string_option [15]
+-----------------------------------------------
+                0.00    0.00       1/1           main [2]
+[16]     0.0    0.00    0.00       1         parse_options [16]
+                0.00    0.00       8/8           find_option [13]
+-----------------------------------------------
+                0.00    0.00       1/1           main [2]
+[17]     0.0    0.00    0.00       1         show_options [17]
+-----------------------------------------------
+
+Index by function name
+
+  [14] add_int_option          [9] get_word               [12] save_string
+  [15] add_string_option       [7] h_xor                  [17] show_options
+   [6] compare_ele             [3] insert_string           [5] sort_words
+   [4] find_ele_iter_r         [8] lower2                  [1] word_freq
+  [13] find_option (options.c) [11] new_ele (dictionary.c)
+  [10] get_token              [16] parse_options

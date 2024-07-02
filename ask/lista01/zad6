@@ -1,0 +1,26 @@
+struct A {
+    int8_t a; // @0 
+    void *b;  // @8 
+    int8_t c; // @16 
+    int16_t d; //@18 
+};
+
+vs, us są typu <struct A*>  
+// sizeof(A) = 24
+code do przetłumaczenia: 
+vs->d = us[1].a + us[j].c;
+
+i1 := 1; 
+i1 := i1 * 24; 
+i1 := (i1 + us); 
+i1 := i1 + 0; 
+v1 := *i1; 
+i2 := j; 
+i2 := i2 * 24; 
+i2 := i2 + 16; 
+i2 := us + i2; 
+v2 := *i2;  
+v3 := v1 + v2; 
+i3 := vs+18; 
+*i3 := v3; 
+

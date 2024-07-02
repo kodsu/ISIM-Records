@@ -1,0 +1,4 @@
+DLa uruchamiania interpreterów z późniejszych list:
+eval $(opam env)
+dune build
+dune utop src / open Let.Main.Env;;

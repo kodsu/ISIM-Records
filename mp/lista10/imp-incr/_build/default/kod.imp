@@ -1,0 +1,10 @@
+var x 
+var y 
+begin  
+	y := 1 
+	x := ++y
+	write x  
+	y := 1 
+	x := y++ 
+	write x
+end 

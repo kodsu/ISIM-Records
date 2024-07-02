@@ -1,0 +1,22 @@
+Notatka - wykład 4 z ocamla na którym były 
+lista i stos 
+struktura słownikowa
+kodowanie huffmana
+
+wprowadzone pojęcia w języku: 
+Module
+Moule type
+sig
+struct
+
+Sygnatura 
+Definiuje zestaw typów danych i funkcji, które muszą być zaimplementowane przez moduł, aby spełnić określone wymagania.
+Jest to rodzaj interfejsu, który określa kontrakty, jakie musi spełniać moduł.
+
+Module
+Moduł w języku OCaml jest strukturą, która zawiera zestaw powiązanych ze sobą wartości, funkcji, typów danych itp. 
+Moduły są używane do organizacji kodu i izolowania jego części.
+
+Funktor 
+Przyjmuje moduł i zwraca moduł, taka magia
+Funktor w języku OCaml jest strukturą, która przyjmuje jeden lub więcej modułów jako argumenty i zwraca nowy moduł jako wynik. Funktory są używane do parametryzacji modułów i tworzenia wielu wersji modułów, które różnią się implementacją, ale mają ten sam interfejs.
